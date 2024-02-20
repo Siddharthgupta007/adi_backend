@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "mens_products",
+  "collectionName": "kids_products",
   "info": {
-    "singularName": "mens-product",
-    "pluralName": "mens-products",
-    "displayName": "mens-product",
-    "description": ""
+    "singularName": "kids-product",
+    "pluralName": "kids-products",
+    "displayName": "Kids-product"
   },
   "options": {
     "draftAndPublish": true
@@ -13,23 +12,18 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string",
-      "required": true,
-      "default": "P0"
+      "type": "string"
     },
     "Image": {
-      "type": "media",
-      "multiple": false,
-      "required": false,
       "allowedTypes": [
         "images",
-        "videos",
-        "files"
-      ]
+        "videos"
+      ],
+      "type": "media",
+      "multiple": false
     },
     "Price": {
-      "type": "integer",
-      "required": true
+      "type": "integer"
     },
     "Slug": {
       "type": "uid",
@@ -73,17 +67,14 @@
       "type": "text"
     },
     "New_drop": {
-      "type": "boolean",
-      "default": true
+      "type": "boolean"
     },
     "Instock": {
       "type": "boolean",
-      "default": true,
-      "required": false
+      "default": true
     },
     "Quantity": {
-      "type": "integer",
-      "default": 5
+      "type": "integer"
     },
     "Size": {
       "type": "json"

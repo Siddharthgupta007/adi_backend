@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "mens_products",
+  "collectionName": "women_products",
   "info": {
-    "singularName": "mens-product",
-    "pluralName": "mens-products",
-    "displayName": "mens-product",
+    "singularName": "women-product",
+    "pluralName": "women-products",
+    "displayName": "women-product",
     "description": ""
   },
   "options": {
@@ -13,9 +13,7 @@
   "pluginOptions": {},
   "attributes": {
     "Title": {
-      "type": "string",
-      "required": true,
-      "default": "P0"
+      "type": "string"
     },
     "Image": {
       "type": "media",
@@ -23,19 +21,17 @@
       "required": false,
       "allowedTypes": [
         "images",
-        "videos",
-        "files"
+        "videos"
       ]
     },
     "Price": {
-      "type": "integer",
-      "required": true
+      "type": "integer"
     },
     "Slug": {
       "type": "uid",
       "targetField": "Title"
     },
-    "Subcategory": {
+    "subcategory": {
       "type": "enumeration",
       "enum": [
         "sneaker",
@@ -50,7 +46,7 @@
         "hiking"
       ]
     },
-    "Colour": {
+    "colour": {
       "type": "enumeration",
       "enum": [
         "White",
@@ -72,18 +68,16 @@
     "Description": {
       "type": "text"
     },
-    "New_drop": {
+    "new_drop": {
       "type": "boolean",
       "default": true
     },
     "Instock": {
       "type": "boolean",
-      "default": true,
-      "required": false
+      "default": true
     },
     "Quantity": {
-      "type": "integer",
-      "default": 5
+      "type": "integer"
     },
     "Size": {
       "type": "json"

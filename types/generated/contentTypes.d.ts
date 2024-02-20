@@ -362,37 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiMensProductMensProduct extends Schema.CollectionType {
-  collectionName: 'mens_products';
-  info: {
-    singularName: 'mens-product';
-    pluralName: 'mens-products';
-    displayName: 'mens-product';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Title: Attribute.String;
-    Image: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::mens-product.mens-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::mens-product.mens-product',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -814,6 +783,218 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiKidsProductKidsProduct extends Schema.CollectionType {
+  collectionName: 'kids_products';
+  info: {
+    singularName: 'kids-product';
+    pluralName: 'kids-products';
+    displayName: 'Kids-product';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media;
+    Price: Attribute.Integer;
+    Slug: Attribute.UID<'api::kids-product.kids-product', 'Title'>;
+    Subcategory: Attribute.Enumeration<
+      [
+        'sneaker',
+        'sportshoe',
+        'slippers',
+        'shirt',
+        'tshirt',
+        'pant',
+        'caps',
+        'swiming',
+        'sandals',
+        'hiking'
+      ]
+    >;
+    Colour: Attribute.Enumeration<
+      [
+        'White',
+        'Black',
+        'Orange\t',
+        'Maroon',
+        'Red\tYellow\t',
+        'Lime green\t',
+        'Green\t',
+        'Sky blue\t',
+        'Grey',
+        'Violet',
+        'Brown',
+        'Navy Blue',
+        'Amber',
+        'Ash\tJet black'
+      ]
+    >;
+    Description: Attribute.Text;
+    New_drop: Attribute.Boolean;
+    Instock: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Quantity: Attribute.Integer;
+    Size: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::kids-product.kids-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::kids-product.kids-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMensProductMensProduct extends Schema.CollectionType {
+  collectionName: 'mens_products';
+  info: {
+    singularName: 'mens-product';
+    pluralName: 'mens-products';
+    displayName: 'mens-product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String & Attribute.Required & Attribute.DefaultTo<'P0'>;
+    Image: Attribute.Media;
+    Price: Attribute.Integer & Attribute.Required;
+    Slug: Attribute.UID<'api::mens-product.mens-product', 'Title'>;
+    Subcategory: Attribute.Enumeration<
+      [
+        'sneaker',
+        'sportshoe',
+        'slippers',
+        'shirt',
+        'tshirt',
+        'pant',
+        'caps',
+        'swiming',
+        'sandals',
+        'hiking'
+      ]
+    >;
+    Colour: Attribute.Enumeration<
+      [
+        'White',
+        'Black',
+        'Orange\t',
+        'Maroon',
+        'Red\tYellow\t',
+        'Lime green\t',
+        'Green\t',
+        'Sky blue\t',
+        'Grey',
+        'Violet',
+        'Brown',
+        'Navy Blue',
+        'Amber',
+        'Ash\tJet black'
+      ]
+    >;
+    Description: Attribute.Text;
+    New_drop: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Instock: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Quantity: Attribute.Integer & Attribute.DefaultTo<5>;
+    Size: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::mens-product.mens-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::mens-product.mens-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiWomenProductWomenProduct extends Schema.CollectionType {
+  collectionName: 'women_products';
+  info: {
+    singularName: 'women-product';
+    pluralName: 'women-products';
+    displayName: 'women-product';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Title: Attribute.String;
+    Image: Attribute.Media;
+    Price: Attribute.Integer;
+    Slug: Attribute.UID<'api::women-product.women-product', 'Title'>;
+    subcategory: Attribute.Enumeration<
+      [
+        'sneaker',
+        'sportshoe',
+        'slippers',
+        'shirt',
+        'tshirt',
+        'pant',
+        'caps',
+        'swiming',
+        'sandals',
+        'hiking'
+      ]
+    >;
+    colour: Attribute.Enumeration<
+      [
+        'White',
+        'Black',
+        'Orange\t',
+        'Maroon',
+        'Red\tYellow\t',
+        'Lime green\t',
+        'Green\t',
+        'Sky blue\t',
+        'Grey',
+        'Violet',
+        'Brown',
+        'Navy Blue',
+        'Amber',
+        'Ash\tJet black'
+      ]
+    >;
+    Description: Attribute.Text;
+    new_drop: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Instock: Attribute.Boolean & Attribute.DefaultTo<true>;
+    Quantity: Attribute.Integer;
+    Size: Attribute.JSON;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::women-product.women-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::women-product.women-product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -824,7 +1005,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::mens-product.mens-product': ApiMensProductMensProduct;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -833,6 +1013,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::kids-product.kids-product': ApiKidsProductKidsProduct;
+      'api::mens-product.mens-product': ApiMensProductMensProduct;
+      'api::women-product.women-product': ApiWomenProductWomenProduct;
     }
   }
 }
